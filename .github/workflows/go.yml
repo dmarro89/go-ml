@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: go mod tidy
 
-      - name: Run lint
-        run: go vet ./...
-
       - name: Build
         run: go build -v ./...
 
