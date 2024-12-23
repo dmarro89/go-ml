@@ -3,14 +3,14 @@ name: Go CI
 on:
   push:
     branches:
-      - "*"
+      - "main"
   pull_request:
     branches:
       - "*"
 
 jobs:
   build:
-    runs-on: macos-12
+    runs-on: macos-15
 
     steps:
       - name: Checkout code
