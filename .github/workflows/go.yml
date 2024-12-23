@@ -37,4 +37,10 @@ jobs:
       - name: Run tests
         env:
           CGO_ENABLED: 1
-        run: go test ./... -v
+        run: go test ./...
+      
+      - name: Upload plots
+        uses: actions/upload-artifact@v3
+        with:
+          name: regression-plots
+          path: ./linearregression/onefeature/plot
