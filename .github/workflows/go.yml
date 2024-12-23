@@ -13,6 +13,7 @@ jobs:
     runs-on: macos-15
 
     steps:
+      
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -25,7 +26,11 @@ jobs:
         run: go mod tidy
 
       - name: Build
+        env:
+          CGO_ENABLED: 1
         run: go build -v ./...
 
       - name: Run tests
+        env:
+          CGO_ENABLED: 1
         run: go test ./... -v
